@@ -33,9 +33,6 @@
     <ClInclude Include="Interfaz.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Prueba.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -54,9 +51,6 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Interfaz.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Prueba.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>

@@ -10,7 +10,7 @@ int main()
 {
 	
 	Interfaz in;
-
+	
 	in.menu();
 	return 0;
 }
