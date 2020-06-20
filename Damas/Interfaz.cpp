@@ -8,12 +8,14 @@ void Interfaz::menu()
 	int opc;
 	int opcion;
 	Ficha fc;
-	Estrategia *es = new Estrategia();
+	Estrategia* EstFacil = new EstrategiaFacil();
+	Estrategia* EstMedia = new EstrategiaMedia();
+	Estrategia* EstDificil = new EstrategiaDificil();
 	Tablero a;
 	string nombre;
 	char tb[8][8];
 	a.tableroVacio(tb);
-	do 
+	do
 	{
 		cout << "------------------Bienvenido------------------" << endl;
 		cout << "         Digite la opcion que desea:          " << endl;
@@ -30,17 +32,17 @@ void Interfaz::menu()
 			{
 			case 1:
 				/*Ficha fc;*/
-				es->setEstado(1);
-				fc.movimientoFicha(es,tb);
+				EstFacil->setEstado(1);
+				fc.movimientoFicha(EstFacil, tb);
 
 				break;
 			case 2:
-				es->setEstado(2);
-				fc.movimientoFicha(es,tb);
+				EstMedia->setEstado(2);
+				fc.movimientoFicha(EstMedia, tb);
 				break;
 			case 3:
-				es->setEstado(3);
-				fc.movimientoFicha(es,tb);
+				EstDificil->setEstado(3);
+				fc.movimientoFicha(EstDificil, tb);
 				break;
 			default:
 				cout << "Eleccion incorrecta" << endl;
@@ -53,17 +55,16 @@ void Interfaz::menu()
 		{
 			break;
 		}
-		
+
 		default:
 			cout << "Opcion invalida" << endl;
 			break;
 		}
-	} 
-	while(opcion != 2);
+	} while (opcion != 2);
 	{
 		cout << "Saliendo del sistema" << endl;
 	}
-	
 
-	
+
+
 }

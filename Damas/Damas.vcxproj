@@ -152,6 +152,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Estrategia.h" />
+    <ClInclude Include="EstrategiaDificil.h" />
+    <ClInclude Include="EstrategiaFacil.h" />
+    <ClInclude Include="EstrategiaMedia.h" />
     <ClInclude Include="Ficha.h" />
     <ClInclude Include="Interfaz.h" />
     <ClInclude Include="Modo.h" />
@@ -161,6 +164,9 @@
   <ItemGroup>
     <ClCompile Include="Damas.cpp" />
     <ClCompile Include="Estrategia.cpp" />
+    <ClCompile Include="EstrategiaDificil.cpp" />
+    <ClCompile Include="EstrategiaFacil.cpp" />
+    <ClCompile Include="EstrategiaMedia.cpp" />
     <ClCompile Include="Ficha.cpp" />
     <ClCompile Include="Interfaz.cpp" />
     <ClCompile Include="pch.cpp">

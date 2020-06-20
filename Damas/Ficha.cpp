@@ -14,10 +14,12 @@ Ficha::Ficha(int f, int c)
 Ficha::~Ficha()
 {
 }
-void Ficha::movimientoFicha(Estrategia*a, char tb[8][8])
+void Ficha::movimientoFicha(Estrategia* a, char tb[][8])
 {
-	
-	Estrategia es;
+
+	Estrategia* EstFacil = new EstrategiaFacil();
+	Estrategia* EstMedia = new EstrategiaMedia();
+	Estrategia* EstDificil = new EstrategiaDificil();
 	Interfaz in;
 	int col = 0;
 	int par;
@@ -36,26 +38,26 @@ void Ficha::movimientoFicha(Estrategia*a, char tb[8][8])
 	cout << "Desea cargar una partida?" << endl;
 	cout << "1-si" << "\n" << "2-No" << endl;
 	cin >> par;
-	if (par == 1) 
+	if (par == 1)
 	{
 		cout << "Digite el nombre de la partida" << endl;
 		cin >> nombre;
-		cargar_p(nombre, tb); 
+		cargar_p(nombre, tb);
 	}
 	else {}
-	
 
-	do 
+
+	do
 	{
-		ficha:
-		if (juegoTerminado(tb) == true) 
+	ficha:
+		if (juegoTerminado(tb) == true)
 		{
 			goto final;
 		}
 		else {}
 
 
-		system ("cls");
+		system("cls");
 		mostrarTablero(tb);
 		if (cont > 0)
 		{
@@ -66,12 +68,12 @@ void Ficha::movimientoFicha(Estrategia*a, char tb[8][8])
 			system("cls");
 			if (opc == 1)
 			{
-				
+
 				guardar_p(nombre, tb);  //revisa de donde se manda la matriz al metodo mostrar
 			}
 			mostrarTablero(tb);
 		}
-		if (cont > 0) 
+		if (cont > 0)
 		{
 			cout << "Desea seguir jugando?" << endl;
 			cout << "1-si" << "\n" << "2-No" << endl;
@@ -85,8 +87,8 @@ void Ficha::movimientoFicha(Estrategia*a, char tb[8][8])
 				goto aqui;
 			}
 		}
-		
-		
+
+
 		cout << "Dig la posicion de la ficha a mover: (Ej: 32)" << endl;
 		cin >> pos;
 
@@ -456,7 +458,7 @@ void Ficha::movimientoFicha(Estrategia*a, char tb[8][8])
 			system("cls");
 			goto ficha;
 		}
-		maquina:
+	maquina:
 		system("pause");
 		system("cls");
 		mostrarTablero(tb);
@@ -466,24 +468,23 @@ void Ficha::movimientoFicha(Estrategia*a, char tb[8][8])
 		Sleep(800);
 		if (a->getEstado() == 1)
 		{
-			es.modoFacil(tb);
+			EstMedia->ModoDeJuego(tb);
 		}
 		if (a->getEstado() == 2)
 		{
-			es.modoAleatorio(tb);
+			EstFacil->ModoDeJuego(tb); ///Modo aleatorio	
 		}
 		if (a->getEstado() == 3)
 		{
-			es.modoDificil(tb);
+			EstDificil->ModoDeJuego(tb);
 		}
 		system("pause");
 		cont++;
 		goto ficha;
-		final:		
+		final:
 		cout << endl;
-	} 
-	while (juegoTerminado(tb) != true);
-	{		
+	} while (juegoTerminado(tb) != true);
+	{
 		system("cls");
 		for (int i = 0; i < 8; i++)
 		{
@@ -511,15 +512,15 @@ void Ficha::movimientoFicha(Estrategia*a, char tb[8][8])
 		if (contador2 == 0)
 		{
 			cout << "----------------------------------" << endl;
-			cout << "|        Juego terminado         |"  << endl;
+			cout << "|        Juego terminado         |" << endl;
 			cout << "|         ¡Has perdido!          |" << endl;
 			cout << "----------------------------------" << endl;
 			system("pause");
 			system("cls");
 		}
-		aqui:
+	aqui:
 		in.menu();
 	}
-	
+
 
 }
