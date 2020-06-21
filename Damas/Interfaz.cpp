@@ -6,7 +6,7 @@
 void Interfaz::menu()
 {
 	int opc;
-	int opcion;
+	int opcion = 0;
 	Ficha fc;
 	Estrategia* EstFacil = new EstrategiaFacil();
 	Estrategia* EstMedia = new EstrategiaMedia();
@@ -15,11 +15,11 @@ void Interfaz::menu()
 	string nombre;
 	char tb[8][8];
 	a.tableroVacio(tb);
-	do
+
+	while (opcion != 3)
 	{
-		cout << "------------------Bienvenido------------------" << endl;
 		cout << "         Digite la opcion que desea:          " << endl;
-		cout << "1-Jugar " << "\n" << "2-Salir" << endl;
+		cout << "1-Jugar " << "\n" << "2-Modo de Prueba" <<"\n"<<"3-Salir" << endl;
 		cin >> opcion;
 		switch (opcion)
 		{
@@ -32,15 +32,16 @@ void Interfaz::menu()
 			{
 			case 1:
 				/*Ficha fc;*/
-				EstFacil->setEstado(1);
-				fc.movimientoFicha(EstFacil, tb);
+				EstMedia->setEstado(1);
+				fc.movimientoFicha(EstMedia, tb);
 
 				break;
 			case 2:
-				EstMedia->setEstado(2);
-				fc.movimientoFicha(EstMedia, tb);
+				EstFacil->setEstado(2);
+				fc.movimientoFicha(EstFacil, tb);
 				break;
 			case 3:
+				cout << "Para utilizar el modo de prueba, cargue la partida con el nombre de partida 'Prueba'" << endl;
 				EstDificil->setEstado(3);
 				fc.movimientoFicha(EstDificil, tb);
 				break;
@@ -53,6 +54,9 @@ void Interfaz::menu()
 		}
 		case 2:
 		{
+			cout << "Modo de Prueba" << endl;
+			EstFacil->setEstado(2);
+			fc.movimientoFicha(EstFacil, tb);
 			break;
 		}
 
@@ -60,11 +64,39 @@ void Interfaz::menu()
 			cout << "Opcion invalida" << endl;
 			break;
 		}
-	} while (opcion != 2);
+	}
 	{
 		cout << "Saliendo del sistema" << endl;
 	}
 
 
 
+}
+
+void Interfaz::Presentacion()
+{
+	int contador = 0;
+	char blanco = 178;
+	char negro = 177;
+	cout << "\t\t\t   Bienvenido a Damas Chinas" << endl << endl;
+	for (int i = 0; i < 8; i++) {
+		cout << endl;
+		contador--;
+		cout << "\t\t\t  ";
+		for (int j = 0; j < 8; j++) {
+			contador++;
+			if (contador % 2 != 0) {
+				cout << blanco << blanco << blanco << blanco;
+			}
+			if (contador % 2 == 0) {
+				cout << negro << negro << negro << negro;
+			}
+		}
+	}
+	cout << "\n\n";
+	cout << "Integrantes: \nGonzalo Umana Cespedes <---> Daniel Rojas Porras <---> Sergio Alfaro Araya" << endl << endl;
+	cout << "Proyecto II Programacion II" << endl;
+	cout << "Universidad Nacional de Costa Rica" << endl;
+	system("pause");
+	system("CLS");
 }

@@ -36,7 +36,7 @@ void Ficha::movimientoFicha(Estrategia* a, char tb[][8])
 	tableroInicializado(tb);
 
 	cout << "Desea cargar una partida?" << endl;
-	cout << "1-si" << "\n" << "2-No" << endl;
+	cout << "1-Si" << "\n" << "2-No" << endl;
 	cin >> par;
 	if (par == 1)
 	{

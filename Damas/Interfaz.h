@@ -9,6 +9,7 @@ class Interfaz
 {
 public:
 	void menu();
+	void Presentacion();
 
 };
 
