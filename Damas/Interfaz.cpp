@@ -61,7 +61,7 @@ void Interfaz::menu()
 		}
 
 		default:
-			cout << "Opcion invalida" << endl;
+			cout << " " << endl;
 			break;
 		}
 	}

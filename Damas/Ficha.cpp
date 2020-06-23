@@ -27,7 +27,7 @@ void Ficha::movimientoFicha(Estrategia* a, char tb[][8])
 	int fi = 0;
 	int contador = 0;
 	int contador2 = 0;
-	char pos[1];
+	char pos[2];
 	char casilla[1];
 	string nombre;
 	int cont = 0;
