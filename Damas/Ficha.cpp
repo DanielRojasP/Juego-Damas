@@ -34,18 +34,21 @@ void Ficha::movimientoFicha(Estrategia* a, char tb[][8])
 	int opc;
 	tableroVacio(tb);
 	tableroInicializado(tb);
-
-	cout << "Desea cargar una partida?" << endl;
-	cout << "1-Si" << "\n" << "2-No" << endl;
-	cin >> par;
-	if (par == 1)
-	{
-		cout << "Digite el nombre de la partida" << endl;
-		cin >> nombre;
-		cargar_p(nombre, tb);
+	if (a->getEstado() == 4) {
+		cargar_p("Prueba", tb);
 	}
-	else {}
-
+	else {
+		cout << "Desea cargar una partida?" << endl;
+		cout << "1-Si" << "\n" << "2-No" << endl;
+		cin >> par;
+		if (par == 1)
+		{
+			cout << "Digite el nombre de la partida" << endl;
+			cin >> nombre;
+			cargar_p(nombre, tb);
+		}
+		else {}
+	}
 
 	do
 	{
@@ -462,7 +465,6 @@ void Ficha::movimientoFicha(Estrategia* a, char tb[][8])
 		system("pause");
 		system("cls");
 		mostrarTablero(tb);
-
 		cout << "Turno de la maquina" << endl;
 		cout << "Pensando jugada..." << endl;
 		Sleep(800);

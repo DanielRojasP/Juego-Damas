@@ -55,19 +55,22 @@ void Interfaz::menu()
 		case 2:
 		{
 			cout << "Modo de Prueba" << endl;
-			EstFacil->setEstado(2);
+			EstFacil->setEstado(4);
 			fc.movimientoFicha(EstFacil, tb);
 			break;
 		}
+		case 3:
+			cout << "Saliendo del sistema" << endl;
+			exit(0);
+				
+			break;
 
 		default:
-			cout << " " << endl;
+			cout << "Opcion erronea " << endl;
 			break;
 		}
 	}
-	{
-		cout << "Saliendo del sistema" << endl;
-	}
+	
 
 
 
